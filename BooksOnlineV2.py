@@ -25,7 +25,6 @@ while prochain:
         page = other
     else:
         prochain = False
-print(pagesurl)
 
 for k in range(len(pagesurl)):
     mainurl2 = requests.get(pagesurl[k])
@@ -36,7 +35,6 @@ for k in range(len(pagesurl)):
         link = a['href']
         link = link.replace("../../../", "http://books.toscrape.com/catalogue/")
         urls.append(link)
-print(urls)
 
 # Scraping d'informations sur les Books:
 for i in range(len(urls)):
@@ -77,8 +75,6 @@ for i in range(len(urls)):
             ta = tab.find(string=temoin[b])
             D[ths[b]] = ta.find_next("td").string
     MainD[i] = D
-    print(D)
-print(MainD)
 
 # Ecriture un fichier csv :
 name = D["category"]
@@ -87,5 +83,3 @@ with open(name, 'w', newline='', encoding="utf-8") as csvfile:
     w.writeheader()
     for y in range(len(urls)):
         w.writerow(MainD[y])
-
-# Voir pour fonction et versionner
