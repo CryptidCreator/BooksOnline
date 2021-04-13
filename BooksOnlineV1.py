@@ -58,8 +58,6 @@ for i in range(len(urls)):
             ta = tab.find(string=temoin[b])
             D[ths[b]] = ta.find_next("td").string
     MainD[i] = D
-    print(D)
-print(MainD)
 
 # Ecriture un fichier csv :
 with open('BooksOnline.csv', 'w', newline='', encoding="utf-8") as csvfile:
@@ -67,6 +65,3 @@ with open('BooksOnline.csv', 'w', newline='', encoding="utf-8") as csvfile:
     w.writeheader()
     for y in range(len(urls)):
         w.writerow(MainD[y])
-# Encodage
-
-# Finir, publiez sur Github puis voir pour fonction et versionner
