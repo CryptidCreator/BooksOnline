@@ -17,7 +17,6 @@ for h3 in links:
     a = h3.find("a")
     link = "http://books.toscrape.com/" + a['href']
     urls.append(link)
-print(urls)
 
 # Scraping d'informations sur les Books:
 for i in range(len(urls)):
